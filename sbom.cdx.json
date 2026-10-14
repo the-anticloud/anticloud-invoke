@@ -1,0 +1,145 @@
+{
+ "bomFormat": "CycloneDX",
+ "specVersion": "1.5",
+ "serialNumber": "urn:uuid:69b5825c-4d95-56d8-8092-0ce123a3815b",
+ "version": 1,
+ "metadata": {
+  "timestamp": "2026-10-06T09:02:47Z",
+  "component": {
+   "type": "application",
+   "name": "INVOKE",
+   "version": "83b357604d34",
+   "bom-ref": "pkg:generic/anticloud/INVOKE@83b357604d34",
+   "purl": "pkg:generic/anticloud/INVOKE@83b357604d34",
+   "licenses": [
+    {
+     "license": {
+      "id": "Apache-2.0"
+     }
+    }
+   ]
+  },
+  "properties": [
+   {
+    "name": "anticloud:source-commit",
+    "value": "REMOVED_CONTAMINATED_SHA_PENDING_API_RESOLVE"
+   },
+   {
+    "name": "anticloud:source-url",
+    "value": "https://github.com/the-anticloud/OPENMRS_CORE.git"
+   },
+   {
+    "name": "anticloud:tier",
+    "value": "tier-agent"
+   }
+  ]
+ },
+ "components": [
+  {
+   "type": "library",
+   "name": "@astrojs/starlight",
+   "version": "^0.39.2",
+   "purl": "pkg:npm/@astrojs/starlight@^0.39.2",
+   "bom-ref": "npm/@astrojs/starlight@^0.39.2"
+  },
+  {
+   "type": "library",
+   "name": "@fontsource-variable/inter",
+   "version": "^5.2.8",
+   "purl": "pkg:npm/@fontsource-variable/inter@^5.2.8",
+   "bom-ref": "npm/@fontsource-variable/inter@^5.2.8"
+  },
+  {
+   "type": "library",
+   "name": "@fontsource-variable/roboto-mono",
+   "version": "^5.2.9",
+   "purl": "pkg:npm/@fontsource-variable/roboto-mono@^5.2.9",
+   "bom-ref": "npm/@fontsource-variable/roboto-mono@^5.2.9"
+  },
+  {
+   "type": "library",
+   "name": "astro",
+   "version": "^6.3.7",
+   "purl": "pkg:npm/astro@^6.3.7",
+   "bom-ref": "npm/astro@^6.3.7"
+  },
+  {
+   "type": "library",
+   "name": "github-slugger",
+   "version": "^2.0.0",
+   "purl": "pkg:npm/github-slugger@^2.0.0",
+   "bom-ref": "npm/github-slugger@^2.0.0"
+  },
+  {
+   "type": "library",
+   "name": "mermaid",
+   "version": "^11.15.0",
+   "purl": "pkg:npm/mermaid@^11.15.0",
+   "bom-ref": "npm/mermaid@^11.15.0"
+  },
+  {
+   "type": "library",
+   "name": "rehype-external-links",
+   "version": "^3.0.0",
+   "purl": "pkg:npm/rehype-external-links@^3.0.0",
+   "bom-ref": "npm/rehype-external-links@^3.0.0"
+  },
+  {
+   "type": "library",
+   "name": "sharp",
+   "version": "^0.34.5",
+   "purl": "pkg:npm/sharp@^0.34.5",
+   "bom-ref": "npm/sharp@^0.34.5"
+  },
+  {
+   "type": "library",
+   "name": "starlight-changelogs",
+   "version": "^0.5.0",
+   "purl": "pkg:npm/starlight-changelogs@^0.5.0",
+   "bom-ref": "npm/starlight-changelogs@^0.5.0"
+  },
+  {
+   "type": "library",
+   "name": "starlight-contextual-menu",
+   "version": "^0.1.5",
+   "purl": "pkg:npm/starlight-contextual-menu@^0.1.5",
+   "bom-ref": "npm/starlight-contextual-menu@^0.1.5"
+  },
+  {
+   "type": "library",
+   "name": "starlight-links-validator",
+   "version": "^0.24.0",
+   "purl": "pkg:npm/starlight-links-validator@^0.24.0",
+   "bom-ref": "npm/starlight-links-validator@^0.24.0"
+  },
+  {
+   "type": "library",
+   "name": "starlight-llms-txt",
+   "version": "^0.10.0",
+   "purl": "pkg:npm/starlight-llms-txt@^0.10.0",
+   "bom-ref": "npm/starlight-llms-txt@^0.10.0"
+  },
+  {
+   "type": "library",
+   "name": "node-addon-api",
+   "version": "^8.8.0",
+   "purl": "pkg:npm/node-addon-api@^8.8.0",
+   "bom-ref": "npm/node-addon-api@^8.8.0"
+  },
+  {
+   "type": "library",
+   "name": "node-gyp",
+   "version": "^12.3.0",
+   "purl": "pkg:npm/node-gyp@^12.3.0",
+   "bom-ref": "npm/node-gyp@^12.3.0"
+  }
+ ],
+ "source": {
+  "git": {
+   "head": null,
+   "url": null,
+   "sha_unverified": true,
+   "note": "contamination removed; resolve via GitHub API before quoting"
+  }
+ }
+}
