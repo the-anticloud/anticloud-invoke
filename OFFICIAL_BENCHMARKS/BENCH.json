@@ -1,0 +1,993 @@
+{
+  "schema": "anticloud.tier-bench/1",
+  "project": "INVOKE",
+  "source": {
+    "repo_path": "E:\\fenta\\Downloads\\The Anticloud\\ANTICLOUD_REPOS\\ARTIST_TOOLS\\INVOKE\\UPSTREAM_CLONE",
+    "git": {
+      "head": "",
+      "url": "https://github.com/",
+      "branch": "master",
+      "committed_at": "2026-09-29T11:06:59+04:00"
+    }
+  },
+  "metrics": {
+    "files_total": 905,
+    "source_files_scanned": 607,
+    "lines_of_code": 121104,
+    "languages": {
+      ".py": 634,
+      ".mdx": 93,
+      ".png": 55,
+      ".webp": 25,
+      ".md": 21,
+      ".json": 15,
+      "(none)": 13,
+      ".astro": 12,
+      ".mjs": 8,
+      ".ts": 8,
+      ".txt": 5,
+      ".svg": 5,
+      ".yaml": 4,
+      ".sh": 2,
+      ".lock": 1
+    }
+  },
+  "licence": {
+    "spdx": "Apache-2.0",
+    "class": "A",
+    "source_file": "LICENSE",
+    "redistribution_allowed": true
+  },
+  "dependencies": {
+    "count": 14,
+    "unique": 14,
+    "by_ecosystem": {
+      "npm": 14
+    },
+    "list": [
+      {
+        "ecosystem": "npm",
+        "name": "@astrojs/starlight",
+        "version": "^0.39.2",
+        "source_file": "docs/package.json",
+        "raw": ""
+      },
+      {
+        "ecosystem": "npm",
+        "name": "@fontsource-variable/inter",
+        "version": "^5.2.8",
+        "source_file": "docs/package.json",
+        "raw": ""
+      },
+      {
+        "ecosystem": "npm",
+        "name": "@fontsource-variable/roboto-mono",
+        "version": "^5.2.9",
+        "source_file": "docs/package.json",
+        "raw": ""
+      },
+      {
+        "ecosystem": "npm",
+        "name": "astro",
+        "version": "^6.3.7",
+        "source_file": "docs/package.json",
+        "raw": ""
+      },
+      {
+        "ecosystem": "npm",
+        "name": "github-slugger",
+        "version": "^2.0.0",
+        "source_file": "docs/package.json",
+        "raw": ""
+      },
+      {
+        "ecosystem": "npm",
+        "name": "mermaid",
+        "version": "^11.15.0",
+        "source_file": "docs/package.json",
+        "raw": ""
+      },
+      {
+        "ecosystem": "npm",
+        "name": "rehype-external-links",
+        "version": "^3.0.0",
+        "source_file": "docs/package.json",
+        "raw": ""
+      },
+      {
+        "ecosystem": "npm",
+        "name": "sharp",
+        "version": "^0.34.5",
+        "source_file": "docs/package.json",
+        "raw": ""
+      },
+      {
+        "ecosystem": "npm",
+        "name": "starlight-changelogs",
+        "version": "^0.5.0",
+        "source_file": "docs/package.json",
+        "raw": ""
+      },
+      {
+        "ecosystem": "npm",
+        "name": "starlight-contextual-menu",
+        "version": "^0.1.5",
+        "source_file": "docs/package.json",
+        "raw": ""
+      },
+      {
+        "ecosystem": "npm",
+        "name": "starlight-links-validator",
+        "version": "^0.24.0",
+        "source_file": "docs/package.json",
+        "raw": ""
+      },
+      {
+        "ecosystem": "npm",
+        "name": "starlight-llms-txt",
+        "version": "^0.10.0",
+        "source_file": "docs/package.json",
+        "raw": ""
+      },
+      {
+        "ecosystem": "npm",
+        "name": "node-addon-api",
+        "version": "^8.8.0",
+        "source_file": "docs/package.json",
+        "raw": ""
+      },
+      {
+        "ecosystem": "npm",
+        "name": "node-gyp",
+        "version": "^12.3.0",
+        "source_file": "docs/package.json",
+        "raw": ""
+      }
+    ]
+  },
+  "owasp_top10": {
+    "total_findings": 93,
+    "files_with_findings": 78,
+    "severity": {
+      "high": 9,
+      "medium": 27,
+      "low": 57
+    },
+    "categories": {
+      "A01-BrokenAccessControl": {
+        "count": 0,
+        "findings": []
+      },
+      "A02-CryptographicFailures": {
+        "count": 1,
+        "findings": [
+          {
+            "severity": "medium",
+            "file": "invokeai/app/invocations/image.py",
+            "line": 1491,
+            "cwe": "CWE-338",
+            "snippet": "rs = numpy.random.RandomState(numpy.random.MT19937(numpy.random.SeedSequence(self.seed)))"
+          }
+        ]
+      },
+      "A03-Injection": {
+        "count": 8,
+        "findings": [
+          {
+            "severity": "high",
+            "file": "invokeai/app/services/video_records/video_records_sqlite.py",
+            "line": 38,
+            "cwe": "CWE-89",
+            "snippet": "SELECT {VIDEO_DTO_COLS} FROM videos"
+          },
+          {
+            "severity": "high",
+            "file": "invokeai/app/services/intermediates/intermediates_records_sqlite.py",
+            "line": 537,
+            "cwe": "CWE-89",
+            "snippet": "SELECT m.{name_column}, m.{subfolder_column} FROM {table} m"
+          },
+          {
+            "severity": "high",
+            "file": "invokeai/app/services/image_records/image_records_sqlite.py",
+            "line": 224,
+            "cwe": "CWE-89",
+            "snippet": "SELECT {IMAGE_DTO_COLS} FROM images"
+          },
+          {
+            "severity": "high",
+            "file": "invokeai/app/services/image_index/image_index_default.py",
+            "line": 677,
+            "cwe": "CWE-95",
+            "snippet": "model.eval()"
+          },
+          {
+            "severity": "high",
+            "file": "invokeai/app/services/gallery/gallery_default.py",
+            "line": 590,
+            "cwe": "CWE-89",
+            "snippet": "half_query = f\"SELECT {select_cols} {from_clause} WHERE 1=1 {conditions}\""
+          },
+          {
+            "severity": "high",
+            "file": "invokeai/app/services/fonts/fonts_default.py",
+            "line": 914,
+            "cwe": "CWE-502",
+            "snippet": "result = pickle.loads(stdout)"
+          },
+          {
+            "severity": "high",
+            "file": "invokeai/app/invocations/text_encoder/sd3_text_encoder.py",
+            "line": 175,
+            "cwe": "CWE-95",
+            "snippet": "clip_text_encoder = clip_text_encoder.eval().requires_grad_(False)"
+          },
+          {
+            "severity": "high",
+            "file": "invokeai/app/invocations/flux2/flux2_denoise.py",
+            "line": 190,
+            "cwe": "CWE-95",
+            "snippet": "vae.eval()"
+          }
+        ]
+      },
+      "A04-InsecureDesign": {
+        "count": 52,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "invokeai/app/api_app.py",
+            "line": 102,
+            "cwe": "CWE-",
+            "snippet": "# TODO: create this all in a method so configuration/etc. can be passed in?"
+          },
+          {
+            "severity": "low",
+            "file": "invokeai/app/services/shared/graph.py",
+            "line": 303,
+            "cwe": "CWE-",
+            "snippet": "# TODO: Store a reference to the graph instead of the actual graph?"
+          },
+          {
+            "severity": "low",
+            "file": "invokeai/app/services/shared/graph_validation.py",
+            "line": 157,
+            "cwe": "CWE-",
+            "snippet": "# TODO(psyche): This is awkward - if field_info is None, it means the field is not defined in the output, which"
+          },
+          {
+            "severity": "low",
+            "file": "invokeai/app/services/shared/sqlite_migrator/migrations/migration_2026_07_10_create_system_prompts.py",
+            "line": 83,
+            "cwe": "CWE-",
+            "snippet": "5.  **The final output must be wrapped in `<recaption>xxxx</recaption>` tags.**"
+          },
+          {
+            "severity": "low",
+            "file": "invokeai/app/services/shared/sqlite_migrator/migrations/migration_7.py",
+            "line": 80,
+            "cwe": "CWE-",
+            "snippet": "- TODO(MM2): Migrates model names and descriptions from `models.yaml` to the new table (?)."
+          },
+          {
+            "severity": "low",
+            "file": "invokeai/app/services/session_queue/session_queue_common.py",
+            "line": 155,
+            "cwe": "CWE-",
+            "snippet": "# TODO(psyche): Update BatchDatum to have a `type` field to specify the type of the items, then we can have strict float and int fields"
+          },
+          {
+            "severity": "low",
+            "file": "invokeai/app/services/names/names_base.py",
+            "line": 7,
+            "cwe": "CWE-",
+            "snippet": "# TODO: Add customizable naming schemes"
+          },
+          {
+            "severity": "low",
+            "file": "invokeai/app/services/names/names_default.py",
+            "line": 8,
+            "cwe": "CWE-",
+            "snippet": "# TODO: Add customizable naming schemes"
+          },
+          {
+            "severity": "low",
+            "file": "invokeai/app/services/model_records/model_records_base.py",
+            "line": 145,
+            "cwe": "CWE-",
+            "snippet": "# TODO(MM2): Should we expose these? Feels footgun-y..."
+          },
+          {
+            "severity": "low",
+            "file": "invokeai/app/services/model_load/model_load_default.py",
+            "line": 90,
+            "cwe": "CWE-",
+            "snippet": "# TODO(psyche): Mock this method on the invoker in the tests"
+          },
+          {
+            "severity": "low",
+            "file": "invokeai/app/services/model_install/model_install_default.py",
+            "line": 470,
+            "cwe": "CWE-",
+            "snippet": "# TODO: Replace this with a proper fix for underlying problem of Windows holding open"
+          },
+          {
+            "severity": "low",
+            "file": "invokeai/app/services/model_images/model_images_common.py",
+            "line": 1,
+            "cwe": "CWE-",
+            "snippet": "# TODO: Should these exceptions subclass existing python exceptions?"
+          },
+          {
+            "severity": "low",
+            "file": "invokeai/app/services/image_records/image_records_base.py",
+            "line": 22,
+            "cwe": "CWE-",
+            "snippet": "# TODO: Implement an `update()` method"
+          },
+          {
+            "severity": "low",
+            "file": "invokeai/app/services/image_records/image_records_common.py",
+            "line": 1,
+            "cwe": "CWE-",
+            "snippet": "# TODO: Should these excpetions subclass existing python exceptions?"
+          },
+          {
+            "severity": "low",
+            "file": "invokeai/app/services/image_files/image_files_base.py",
+            "line": 39,
+            "cwe": "CWE-",
+            "snippet": "# TODO: We need to validate paths before starlette makes the FileResponse, else we get a"
+          },
+          {
+            "severity": "low",
+            "file": "invokeai/app/services/image_files/image_files_common.py",
+            "line": 1,
+            "cwe": "CWE-",
+            "snippet": "# TODO: Should these excpetions subclass existing python exceptions?"
+          },
+          {
+            "severity": "low",
+            "file": "invokeai/app/services/image_files/image_files_disk.py",
+            "line": 98,
+            "cwe": "CWE-",
+            "snippet": "self.__max_cache_size = 10  # TODO: get this from config"
+          },
+          {
+            "severity": "low",
+            "file": "invokeai/app/services/images/images_default.py",
+            "line": 105,
+            "cwe": "CWE-",
+            "snippet": "# TODO: Consider using a transaction here to ensure consistency between storage and database"
+          },
+          {
+            "severity": "low",
+            "file": "invokeai/app/services/config/config_default.py",
+            "line": 1,
+            "cwe": "CWE-",
+            "snippet": "# TODO(psyche): pydantic-settings supports YAML settings sources. If we can figure out a way to integrate the YAML"
+          },
+          {
+            "severity": "low",
+            "file": "invokeai/app/invocations/baseinvocation.py",
+            "line": 491,
+            "cwe": "CWE-",
+            "snippet": "# TODO(psyche): We do not record the node pack of the output, so we cannot log it here"
+          },
+          {
+            "severity": "low",
+            "file": "invokeai/app/invocations/composition-nodes.py",
+            "line": 875,
+            "cwe": "CWE-",
+            "snippet": "else:  # TODO: Currently blending only the lightness channel, not really ideal."
+          },
+          {
+            "severity": "low",
+            "file": "invokeai/app/invocations/constants.py",
+            "line": 5,
+            "cwe": "CWE-",
+            "snippet": "HACK: Many nodes are currently hard-coded to use a fixed latent scale factor of 8. This is fragile, and will need to"
+          },
+          {
+            "severity": "low",
+            "file": "invokeai/app/invocations/crop_latents.py",
+            "line": 17,
+            "cwe": "CWE-",
+            "snippet": "# TODO(ryand): Named `CropLatentsCoreInvocation` to prevent a conflict with custom node `CropLatentsInvocation`."
+          },
+          {
+            "severity": "low",
+            "file": "invokeai/app/invocations/cv.py",
+            "line": 23,
+            "cwe": "CWE-",
+            "snippet": "# TODO: consider making these utility functions"
+          },
+          {
+            "severity": "low",
+            "file": "invokeai/app/invocations/fields.py",
+            "line": 911,
+            "cwe": "CWE-",
+            "snippet": "# TODO: Can we support default_factory?"
+          }
+        ]
+      },
+      "A05-SecurityMisconfiguration": {
+        "count": 26,
+        "findings": [
+          {
+            "severity": "medium",
+            "file": "invokeai/app/services/users/users_common.py",
+            "line": 81,
+            "cwe": "CWE-1188",
+            "snippet": "is_active: bool = Field(default=True, description=\"Whether user account is active\")"
+          },
+          {
+            "severity": "medium",
+            "file": "invokeai/app/services/session_queue/session_queue_common.py",
+            "line": 308,
+            "cwe": "CWE-1188",
+            "snippet": "_snapshot_readable: bool = PrivateAttr(default=True)"
+          },
+          {
+            "severity": "medium",
+            "file": "invokeai/app/services/config/config_default.py",
+            "line": 185,
+            "cwe": "CWE-1188",
+            "snippet": "allow_credentials:             bool = Field(default=True,               description=\"Allow CORS credentials.\")"
+          },
+          {
+            "severity": "medium",
+            "file": "invokeai/app/invocations/baseinvocation.py",
+            "line": 335,
+            "cwe": "CWE-1188",
+            "snippet": "default=True,"
+          },
+          {
+            "severity": "medium",
+            "file": "invokeai/app/invocations/composition-nodes.py",
+            "line": 82,
+            "cwe": "CWE-1188",
+            "snippet": "default=True, description=\"Use more steps in computing gamut (Oklab/Okhsv/Okhsl)\""
+          },
+          {
+            "severity": "medium",
+            "file": "invokeai/app/invocations/dw_openpose.py",
+            "line": 21,
+            "cwe": "CWE-1188",
+            "snippet": "draw_body: bool = InputField(default=True)"
+          },
+          {
+            "severity": "medium",
+            "file": "invokeai/app/invocations/image.py",
+            "line": 1481,
+            "cwe": "CWE-1188",
+            "snippet": "noise_color: bool = InputField(default=True, description=\"Whether to add colored noise\")"
+          },
+          {
+            "severity": "medium",
+            "file": "invokeai/app/invocations/loops.py",
+            "line": 226,
+            "cwe": "CWE-1188",
+            "snippet": "default=True,"
+          },
+          {
+            "severity": "medium",
+            "file": "invokeai/app/invocations/model.py",
+            "line": 792,
+            "cwe": "CWE-1188",
+            "snippet": "seamless_y: bool = InputField(default=True, input=Input.Any, description=\"Specify whether Y axis is seamless\")"
+          },
+          {
+            "severity": "medium",
+            "file": "invokeai/app/invocations/noise.py",
+            "line": 64,
+            "cwe": "CWE-1188",
+            "snippet": "default=True,"
+          },
+          {
+            "severity": "medium",
+            "file": "invokeai/app/invocations/segment_anything.py",
+            "line": 76,
+            "cwe": "CWE-1188",
+            "snippet": "default=True,"
+          },
+          {
+            "severity": "medium",
+            "file": "invokeai/app/invocations/z_image/z_image_denoise.py",
+            "line": 98,
+            "cwe": "CWE-1188",
+            "snippet": "add_noise: bool = InputField(default=True, description=\"Add noise based on denoising start.\")"
+          },
+          {
+            "severity": "medium",
+            "file": "invokeai/app/invocations/wan/wan_denoise.py",
+            "line": 385,
+            "cwe": "CWE-1188",
+            "snippet": "add_noise: bool = InputField(default=True, description=\"Add noise based on denoising start.\")"
+          },
+          {
+            "severity": "medium",
+            "file": "invokeai/app/invocations/text_encoder/ltx2_text_encoder.py",
+            "line": 75,
+            "cwe": "CWE-1188",
+            "snippet": "default=True,"
+          },
+          {
+            "severity": "medium",
+            "file": "invokeai/app/invocations/sd/denoise_latents.py",
+            "line": 204,
+            "cwe": "CWE-1188",
+            "snippet": "default=True,"
+          },
+          {
+            "severity": "medium",
+            "file": "invokeai/app/invocations/flux2/flux2_denoise.py",
+            "line": 124,
+            "cwe": "CWE-1188",
+            "snippet": "add_noise: bool = InputField(default=True, description=\"Add noise based on denoising start.\")"
+          },
+          {
+            "severity": "medium",
+            "file": "invokeai/app/invocations/flux/flux_denoise.py",
+            "line": 108,
+            "cwe": "CWE-1188",
+            "snippet": "add_noise: bool = InputField(default=True, description=\"Add noise based on denoising start.\")"
+          },
+          {
+            "severity": "medium",
+            "file": "invokeai/app/invocations/ernie_image/ernie_image_denoise.py",
+            "line": 64,
+            "cwe": "CWE-1188",
+            "snippet": "default=True,"
+          },
+          {
+            "severity": "medium",
+            "file": "invokeai/app/invocations/ernie_image/ernie_image_model_loader.py",
+            "line": 88,
+            "cwe": "CWE-1188",
+            "snippet": "default=True,"
+          },
+          {
+            "severity": "medium",
+            "file": "invokeai/app/invocations/anima/anima_denoise.py",
+            "line": 207,
+            "cwe": "CWE-1188",
+            "snippet": "add_noise: bool = InputField(default=True, description=\"Add noise based on denoising start.\")"
+          },
+          {
+            "severity": "medium",
+            "file": "invokeai/app/api/routers/gallery.py",
+            "line": 40,
+            "cwe": "CWE-1188",
+            "snippet": "starred_first: bool = Query(default=True, description=\"Whether to sort by starred items first\"),"
+          },
+          {
+            "severity": "medium",
+            "file": "invokeai/app/api/routers/images.py",
+            "line": 534,
+            "cwe": "CWE-1188",
+            "snippet": "starred_first: bool = Query(default=True, description=\"Whether to sort by starred images first\"),"
+          },
+          {
+            "severity": "medium",
+            "file": "invokeai/app/api/routers/recall_parameters.py",
+            "line": 25,
+            "cwe": "CWE-1188",
+            "snippet": "is_enabled: bool = Field(default=True, description=\"Whether the LoRA is enabled\")"
+          },
+          {
+            "severity": "medium",
+            "file": "invokeai/app/api/routers/utilities.py",
+            "line": 95,
+            "cwe": "CWE-1188",
+            "snippet": "combinatorial: bool = Body(default=True, description=\"Whether to use the combinatorial generator\"),"
+          },
+          {
+            "severity": "medium",
+            "file": "invokeai/app/api/routers/videos.py",
+            "line": 999,
+            "cwe": "CWE-1188",
+            "snippet": "starred_first: bool = Query(default=True, description=\"Whether to sort by starred videos first\"),"
+          }
+        ]
+      },
+      "A06-VulnerableComponents": {
+        "count": 0,
+        "findings": []
+      },
+      "A07-AuthFailures": {
+        "count": 1,
+        "findings": [
+          {
+            "severity": "high",
+            "file": "invokeai/app/services/config/config_default.py",
+            "line": 772,
+            "cwe": "CWE-798",
+            "snippet": "URLRegexTokenPair(url_regex=\"cool-models.com\", token=\"my_secret_token\"),"
+          }
+        ]
+      },
+      "A08-SoftwareDataIntegrity": {
+        "count": 4,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "invokeai/app/api_app.py",
+            "line": 304,
+            "cwe": "CWE-319",
+            "snippet": "have this query string saved in history or a bookmark, so when the user navigates to `http://127.0.0.1:9090/`, the"
+          },
+          {
+            "severity": "low",
+            "file": "invokeai/app/services/download/download_base.py",
+            "line": 188,
+            "cwe": "CWE-",
+            "snippet": "etag: Optional[str] = Field(default=None, description=\"ETag from the remote server, if available\")"
+          },
+          {
+            "severity": "low",
+            "file": "invokeai/app/services/download/download_default.py",
+            "line": 891,
+            "cwe": "CWE-319",
+            "snippet": "#   download_service.download(DownloadJob('http://foo.bar/baz', '/tmp', on_progress=TqdmProgress().update))"
+          },
+          {
+            "severity": "low",
+            "file": "invokeai/app/api/dependencies.py",
+            "line": 85,
+            "cwe": "CWE-319",
+            "snippet": "host = \"http://huggingface.co\""
+          }
+        ]
+      },
+      "A09-LoggingMonitoringFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A10-SSRF": {
+        "count": 1,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "invokeai/app/services/download/download_default.py",
+            "line": 644,
+            "cwe": "CWE-601",
+            "snippet": "def _reject_unsafe_redirect(self, response: requests.Response, *args: Any, **kwargs: Any) -> requests.Response:"
+          }
+        ]
+      }
+    }
+  },
+  "owasp_llm_top10": {
+    "total_findings": 20,
+    "files_with_findings": 17,
+    "severity": {
+      "high": 0,
+      "medium": 12,
+      "low": 8
+    },
+    "categories": {
+      "LLM01-PromptInjection": {
+        "count": 6,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "invokeai/app/services/system_prompt_records/system_prompt_records_base.py",
+            "line": 22,
+            "cwe": "CWE-1427",
+            "snippet": "system_prompt: SystemPromptWithoutId,"
+          },
+          {
+            "severity": "low",
+            "file": "invokeai/app/services/system_prompt_records/system_prompt_records_sqlite.py",
+            "line": 36,
+            "cwe": "CWE-1427",
+            "snippet": "system_prompt: SystemPromptWithoutId,"
+          },
+          {
+            "severity": "low",
+            "file": "invokeai/app/invocations/text_llm.py",
+            "line": 26,
+            "cwe": "CWE-1427",
+            "snippet": "system_prompt: str,"
+          },
+          {
+            "severity": "low",
+            "file": "invokeai/app/invocations/text_encoder/qwen_image_text_encoder.py",
+            "line": 39,
+            "cwe": "CWE-1427",
+            "snippet": "_EDIT_SYSTEM_PROMPT = ("
+          },
+          {
+            "severity": "low",
+            "file": "invokeai/app/api/routers/system_prompts.py",
+            "line": 62,
+            "cwe": "CWE-1427",
+            "snippet": "system_prompt: SystemPromptWithoutId = Body(description=\"The system prompt to create\"),"
+          },
+          {
+            "severity": "low",
+            "file": "invokeai/app/api/routers/utilities.py",
+            "line": 377,
+            "cwe": "CWE-1427",
+            "snippet": "system_prompt: str | None = None"
+          }
+        ]
+      },
+      "LLM02-SensitiveInfoDisclosure": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM03-SupplyChain": {
+        "count": 12,
+        "findings": [
+          {
+            "severity": "medium",
+            "file": "invokeai/app/services/model_load/model_load_default.py",
+            "line": 149,
+            "cwe": "CWE-494",
+            "snippet": "return load_class.from_pretrained(model_path, torch_dtype=TorchDevice.choose_torch_dtype())"
+          },
+          {
+            "severity": "medium",
+            "file": "invokeai/app/services/image_index/image_index_default.py",
+            "line": 646,
+            "cwe": "CWE-494",
+            "snippet": "tokenizer = AutoTokenizer.from_pretrained(model_path, local_files_only=True)"
+          },
+          {
+            "severity": "medium",
+            "file": "invokeai/app/invocations/llava_onevision_vllm.py",
+            "line": 65,
+            "cwe": "CWE-494",
+            "snippet": "processor = AutoProcessor.from_pretrained(model_abs_path, local_files_only=True)"
+          },
+          {
+            "severity": "medium",
+            "file": "invokeai/app/invocations/segment_anything.py",
+            "line": 114,
+            "cwe": "CWE-494",
+            "snippet": "sam_model = SamModel.from_pretrained("
+          },
+          {
+            "severity": "medium",
+            "file": "invokeai/app/invocations/text_llm.py",
+            "line": 35,
+            "cwe": "CWE-494",
+            "snippet": "tokenizer = AutoTokenizer.from_pretrained(model_abs_path, local_files_only=True)"
+          },
+          {
+            "severity": "medium",
+            "file": "invokeai/app/invocations/wan/wan_denoise.py",
+            "line": 762,
+            "cwe": "CWE-494",
+            "snippet": "return scheduler_cls.from_pretrained(str(scheduler_dir), local_files_only=True)"
+          },
+          {
+            "severity": "medium",
+            "file": "invokeai/app/invocations/text_encoder/qwen_image_text_encoder.py",
+            "line": 233,
+            "cwe": "CWE-494",
+            "snippet": "image_processor = _ImageProcessorCls.from_pretrained(str(search_dir), local_files_only=True)"
+          },
+          {
+            "severity": "medium",
+            "file": "invokeai/app/invocations/qwen_image/qwen_image_denoise.py",
+            "line": 304,
+            "cwe": "CWE-494",
+            "snippet": "scheduler = FlowMatchEulerDiscreteScheduler.from_pretrained(str(scheduler_path), local_files_only=True)"
+          },
+          {
+            "severity": "medium",
+            "file": "invokeai/app/invocations/krea2/krea2_denoise.py",
+            "line": 383,
+            "cwe": "CWE-494",
+            "snippet": "scheduler = FlowMatchEulerDiscreteScheduler.from_pretrained(str(scheduler_path), local_files_only=True)"
+          },
+          {
+            "severity": "medium",
+            "file": "invokeai/app/invocations/flux/flux_redux.py",
+            "line": 128,
+            "cwe": "CWE-494",
+            "snippet": "processor = SiglipImageProcessor.from_pretrained(model_abs_path, local_files_only=True)"
+          },
+          {
+            "severity": "medium",
+            "file": "invokeai/app/invocations/ernie_image/ernie_image_denoise.py",
+            "line": 240,
+            "cwe": "CWE-494",
+            "snippet": "return scheduler_cls.from_pretrained(model_path, subfolder=\"scheduler\")"
+          },
+          {
+            "severity": "medium",
+            "file": "invokeai/app/api/routers/utilities.py",
+            "line": 464,
+            "cwe": "CWE-494",
+            "snippet": "processor = AutoProcessor.from_pretrained(model_abs_path, local_files_only=True) if image is not None else None"
+          }
+        ]
+      },
+      "LLM04-DataPoisoning": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM05-ImproperOutputHandling": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM06-ExcessiveAgency": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM07-SystemPromptLeak": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM08-VectorEmbeddingWeaknesses": {
+        "count": 2,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "invokeai/app/invocations/composition-nodes.py",
+            "line": 34,
+            "cwe": "CWE-",
+            "snippet": "equivalent_achromatic_lightness,"
+          },
+          {
+            "severity": "low",
+            "file": "invokeai/app/invocations/image.py",
+            "line": 760,
+            "cwe": "CWE-",
+            "snippet": "colorspace: Literal[\"RGB\", \"YCbCr\", \"YCbCr-Chroma\", \"YCbCr-Luma\"] = InputField("
+          }
+        ]
+      },
+      "LLM09-Misinformation": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM10-UnboundedConsumption": {
+        "count": 0,
+        "findings": []
+      }
+    }
+  },
+  "sbom": {
+    "bomFormat": "CycloneDX",
+    "specVersion": "1.5",
+    "serialNumber": "urn:uuid:69b5825c-4d95-56d8-8092-0ce123a3815b",
+    "version": 1,
+    "metadata": {
+      "timestamp": "2026-10-06T07:23:37Z",
+      "component": {
+        "type": "application",
+        "name": "INVOKE",
+        "version": "83b357604d34",
+        "bom-ref": "pkg:generic/anticloud/INVOKE@83b357604d34",
+        "purl": "pkg:generic/anticloud/INVOKE@83b357604d34",
+        "licenses": [
+          {
+            "license": {
+              "id": "Apache-2.0"
+            }
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "anticloud:source-commit",
+          "value": ""
+        },
+        {
+          "name": "anticloud:source-url",
+          "value": "https://github.com/"
+        },
+        {
+          "name": "anticloud:tier",
+          "value": "tier-agent"
+        }
+      ]
+    },
+    "components": [
+      {
+        "type": "library",
+        "name": "@astrojs/starlight",
+        "version": "^0.39.2",
+        "purl": "pkg:npm/@astrojs/starlight@^0.39.2",
+        "bom-ref": "npm/@astrojs/starlight@^0.39.2"
+      },
+      {
+        "type": "library",
+        "name": "@fontsource-variable/inter",
+        "version": "^5.2.8",
+        "purl": "pkg:npm/@fontsource-variable/inter@^5.2.8",
+        "bom-ref": "npm/@fontsource-variable/inter@^5.2.8"
+      },
+      {
+        "type": "library",
+        "name": "@fontsource-variable/roboto-mono",
+        "version": "^5.2.9",
+        "purl": "pkg:npm/@fontsource-variable/roboto-mono@^5.2.9",
+        "bom-ref": "npm/@fontsource-variable/roboto-mono@^5.2.9"
+      },
+      {
+        "type": "library",
+        "name": "astro",
+        "version": "^6.3.7",
+        "purl": "pkg:npm/astro@^6.3.7",
+        "bom-ref": "npm/astro@^6.3.7"
+      },
+      {
+        "type": "library",
+        "name": "github-slugger",
+        "version": "^2.0.0",
+        "purl": "pkg:npm/github-slugger@^2.0.0",
+        "bom-ref": "npm/github-slugger@^2.0.0"
+      },
+      {
+        "type": "library",
+        "name": "mermaid",
+        "version": "^11.15.0",
+        "purl": "pkg:npm/mermaid@^11.15.0",
+        "bom-ref": "npm/mermaid@^11.15.0"
+      },
+      {
+        "type": "library",
+        "name": "rehype-external-links",
+        "version": "^3.0.0",
+        "purl": "pkg:npm/rehype-external-links@^3.0.0",
+        "bom-ref": "npm/rehype-external-links@^3.0.0"
+      },
+      {
+        "type": "library",
+        "name": "sharp",
+        "version": "^0.34.5",
+        "purl": "pkg:npm/sharp@^0.34.5",
+        "bom-ref": "npm/sharp@^0.34.5"
+      },
+      {
+        "type": "library",
+        "name": "starlight-changelogs",
+        "version": "^0.5.0",
+        "purl": "pkg:npm/starlight-changelogs@^0.5.0",
+        "bom-ref": "npm/starlight-changelogs@^0.5.0"
+      },
+      {
+        "type": "library",
+        "name": "starlight-contextual-menu",
+        "version": "^0.1.5",
+        "purl": "pkg:npm/starlight-contextual-menu@^0.1.5",
+        "bom-ref": "npm/starlight-contextual-menu@^0.1.5"
+      },
+      {
+        "type": "library",
+        "name": "starlight-links-validator",
+        "version": "^0.24.0",
+        "purl": "pkg:npm/starlight-links-validator@^0.24.0",
+        "bom-ref": "npm/starlight-links-validator@^0.24.0"
+      },
+      {
+        "type": "library",
+        "name": "starlight-llms-txt",
+        "version": "^0.10.0",
+        "purl": "pkg:npm/starlight-llms-txt@^0.10.0",
+        "bom-ref": "npm/starlight-llms-txt@^0.10.0"
+      },
+      {
+        "type": "library",
+        "name": "node-addon-api",
+        "version": "^8.8.0",
+        "purl": "pkg:npm/node-addon-api@^8.8.0",
+        "bom-ref": "npm/node-addon-api@^8.8.0"
+      },
+      {
+        "type": "library",
+        "name": "node-gyp",
+        "version": "^12.3.0",
+        "purl": "pkg:npm/node-gyp@^12.3.0",
+        "bom-ref": "npm/node-gyp@^12.3.0"
+      }
+    ]
+  },
+  "elapsed_seconds": 92.2
+}
